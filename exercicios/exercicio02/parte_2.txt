@@ -1,0 +1,11 @@
+#1 ”revista” no singular e no plural
+
+"revist(a|as)"
+
+#2 "letra” em qualquer combinacao de letras
+
+"(L|l)(E|e)(T|t)(R|r)(A|a)"
+
+#3 Os numeros inteiros.
+
+"([+]|-)[[:digit:]]+[[:space:]]"
