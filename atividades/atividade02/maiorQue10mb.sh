@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: OK. 1,0 ponto.
 
 mkdir ./maiorque10
 
