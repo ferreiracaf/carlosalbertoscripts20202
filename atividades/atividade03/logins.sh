@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 1,0
 
 grep -v "sshd" /home/compartilhado/auth.log.1
 
