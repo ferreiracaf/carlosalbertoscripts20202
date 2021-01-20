@@ -1,7 +1,6 @@
 #!/bin/bash
 
 IP="$1"
-rm ./${IP}0.txt
 
 echo "INICIO" >> ./${IP}0.txt
 
