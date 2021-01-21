@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Correção: 1,0
 path="$1"
 
 if [ -d "$path" ]

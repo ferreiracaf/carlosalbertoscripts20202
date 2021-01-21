@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Correção: 1,0
 add="adicionar"
 show="listar"
 del="remover"

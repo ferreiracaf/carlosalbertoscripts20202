@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Correção: 1,0
 maior="$1"
 regex='^[0-9]+$'
 
