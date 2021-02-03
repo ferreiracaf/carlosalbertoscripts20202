@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 1,0
 trap "clear;echo -e \"\nAté a próxima $(whoami)\";exit" 2
 
 opcao=
