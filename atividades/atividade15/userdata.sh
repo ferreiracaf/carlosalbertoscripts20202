@@ -72,6 +72,7 @@ EOF
 
 chmod 744 /usr/local/bin/atividade.sh
 
+# Não pode ter esse espaço entre o cat e o <<
 cat << 'EOF' > /etc/systemd/system/my-script.service
 [Unit]
 After=network.target

@@ -14,6 +14,7 @@ echo "Criando servidor de Monitoramento..."
 
 InstanceId=$(aws ec2 run-instances --image-id $IMAGE --instance-type "t2.micro" --key-name $KEY --security-group-ids $SGID --subnet-id $SUBNET --user-data file://userdata.sh --query "Instances[0].InstanceId" --output text)
 
+# A partir de agora, estude como verificar o estado da instância e só prosseguir quando o mesmo for running
 sleep 3
 
 IP=$(aws ec2 describe-instances --instance-id $InstanceId --query "Reservations[0].Instances[0].PublicIpAddress" --output text)
