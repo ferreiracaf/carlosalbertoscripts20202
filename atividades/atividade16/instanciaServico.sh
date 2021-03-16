@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# Correção: 1,0
 KEY=$1
 IMAGE="ami-042e8287309f5df03"
 GroupName="SGIDScriptsAtividade16"
