@@ -3,6 +3,7 @@
 KEY=$1
 USER=$2
 PASSWORD=$3
+MYIP=$(curl ifconfig.me)
 IMAGE="ami-042e8287309f5df03"
 GroupName="SGIDScriptsAtividade17"
 SUBNET=$(aws ec2 describe-subnets --query "Subnets[0].SubnetId" --output text)
@@ -18,7 +19,7 @@ done
 
 if [ $createSG -eq 1 ]; then
     SGID=$(aws ec2 create-security-group --group-name $GroupName --description "$GroupName description" --vpc-id $VPCID --output text)
-    aws ec2 authorize-security-group-ingress --group-name $GroupName --protocol tcp --port 22 --cidr 0.0.0.0/0
+    aws ec2 authorize-security-group-ingress --group-name $GroupName --protocol tcp --port 22 --cidr $MYIP/32
     aws ec2 authorize-security-group-ingress --group-name $GroupName --protocol tcp --port 80 --cidr 0.0.0.0/0
     aws ec2 authorize-security-group-ingress --group-name $GroupName --protocol tcp --port 3306 --source-group $SGID
 else
@@ -60,3 +61,5 @@ while true; do
 done
 
 echo "IP Público do Servidor de Aplicação: ${PublicIP}"
+
+rm ./userdata_out.sh ./userdatadb_out.sh

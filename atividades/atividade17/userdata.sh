@@ -1,14 +1,12 @@
 #!/bin/bash
 
+apt-get update
 apt-get install -y mysql-client
 
-USER=USUARIO
-PASSWORD=SENHA
-
 echo "[client]
-user=$USER
-password=$PASSWORD" > /root/.my.cnf
+user=USUARIO
+password=SENHA" > /root/.my.cnf
 
-mysql -u $USER scripts -h $PrivateIP<<EOF
+mysql --defaults-file=/root/.my.cnf -u USUARIO scripts -h PRIVADOIP<<EOF
 CREATE TABLE Teste ( atividade INT );
 EOF

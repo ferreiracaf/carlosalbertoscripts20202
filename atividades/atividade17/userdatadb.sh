@@ -1,9 +1,6 @@
 #!/bin/bash
 
-USER=USUARIO
-PrivateIP=PRIVADOIP
-PASSWORD=SENHA
-
+apt-get update
 apt-get install -y mysql-server
 
 for i in $(grep -n "bind-address" /etc/mysql/mysql.conf.d/mysqld.cnf | cut -d':' -f1); do
@@ -14,8 +11,7 @@ systemctl restart mysql.service
 
 mysql<<EOF
 CREATE DATABASE scripts;
-CREATE USER '${USER}'@'%' IDENTIFIED BY '${PASSWORD}';
-GRANT ALL PRIVILEGES ON scripts.* TO '${USER}'@'%';
+CREATE USER 'USUARIO'@'%' IDENTIFIED BY 'SENHA';
+GRANT ALL PRIVILEGES ON scripts.* TO 'USUARIO'@'%';
 USE scripts;
-CREATE TABLE teste01 ( teste INT );
 EOF
