@@ -2,8 +2,8 @@
 
 apt-get install -y mysql-client
 
-USER=USUARIO
-PASSWORD=SENHA
+USER=alunoufc
+PASSWORD=123scripts456
 
 echo "[client]
 user=$USER
