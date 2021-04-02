@@ -1,4 +1,5 @@
 #!/bin/bash
+# Correção: 2,5
 
 KEY=$1
 USER=$2
